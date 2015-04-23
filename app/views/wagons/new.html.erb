@@ -1,0 +1,24 @@
+<h1>Новый вагон</h1>
+<%= form_for :wagon, url: wagons_path do |w| %>
+	<p>
+		<%= w.label :label %><br/>
+		<%= w.text_field :label %>
+	</p>
+
+	<p>
+		<%= w.label :description %><br/>
+		<%= w.text_area :description %>
+	</p>
+	<p>
+		<%= w.label :created_at %><br/>
+		<%= w.date_field :created_at %>
+	</p>
+	<p>
+		<%= w.label :repared_at %><br/>
+		<%= w.date_field :repared_at %>
+	</p>
+
+	<p>
+		<%= w.submit %>
+	</p>
+<% end %>
