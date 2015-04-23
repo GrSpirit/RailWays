@@ -8,13 +8,31 @@ class WagonsController < ApplicationController
 	end
 
 	def new
+		@wagon = Wagon.new
+	end
+
+	def edit
+		@wagon = Wagon.find(params[:id])
 	end
 
 	def create
 		@wagon = Wagon.new(wagon_params)
 
-		@wagon.save
-		redirect_to @wagon
+		if @wagon.save
+			redirect_to @wagon
+		else
+			render 'new'
+		end
+	end
+
+	def update
+		@wagon = Wagon.find(params[:id])
+
+		if @wagon.update(wagon_params)
+			redirect_to @wagon
+		else
+			render 'edit'
+		end
 	end
 
 private

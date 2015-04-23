@@ -1,0 +1,36 @@
+<%= form_for @wagon do |w| %>
+    <% if @wagon.errors.any? %>
+        <div id="error_explanation"></div>
+        <h2>
+          <%= pluralize(@wagon.errors.count, 'error') %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @wagon.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+	<p>
+		<%= w.label :label %><br/>
+		<%= w.text_field :label %>
+	</p>
+
+	<p>
+		<%= w.label :description %><br/>
+		<%= w.text_area :description %>
+	</p>
+	<p>
+		<%= w.label :created_at %><br/>
+		<%= w.date_field :created_at %>
+	</p>
+	<p>
+		<%= w.label :repared_at %><br/>
+		<%= w.date_field :repared_at %>
+	</p>
+
+	<p>
+		<%= w.submit %>
+	</p>
+<% end %>
+
