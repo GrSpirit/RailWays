@@ -1,4 +1,6 @@
 class WagonsController < ApplicationController
+  http_basic_authenticate_with name: 'dhh', password: 'secret', except: [:index, :show]
+  
   def index
     @wagons = Wagon.all
   end
@@ -38,13 +40,13 @@ class WagonsController < ApplicationController
   def destroy
     @wagon = Wagon.find(params[:id])
     @wagon.destroy
-    
+
     redirect_to wagons_path
   end
 
 private
   def wagon_params
-    params.require(:wagon).permit(:label, :description, :created_at, :repared_at)
+    params.require(:wagon).permit(:label, :description, :manufactured_at, :repared_at)
   end
 
 end

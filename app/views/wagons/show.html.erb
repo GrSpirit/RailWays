@@ -10,7 +10,11 @@
 
 <p>
 	<strong>Даты:</strong>
-	<%= @wagon.created_at %> | <%= @wagon.repared_at %>
+	<%= @wagon.manufactured_at %> | <%= @wagon.repared_at %>
 </p>
+<h2>Комментарии</h2>
+<%= render @wagon.comments %>
 
+<h2>Добавить комментарий</h2>
+<%= render 'comments/form' %>
 <%= link_to 'Назад', wagons_path %>

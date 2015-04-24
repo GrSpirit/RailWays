@@ -11,7 +11,7 @@
     <% @wagons.each do |wagon| %>
     <tr>
       <td><%= link_to wagon.label, wagon_path(wagon) %></td>
-      <td><%= wagon.created_at %></td>
+      <td><%= wagon.manufactured_at %></td>
       <td><%= link_to 'Edit', edit_wagon_path(wagon) %></td>
       <td><%= link_to 'Delete', wagon_path(wagon), 
                                 method: :delete,

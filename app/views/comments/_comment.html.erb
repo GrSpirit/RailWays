@@ -1,0 +1,13 @@
+<p>
+  <strong>Комментатор:</strong>
+  <%= comment.commenter %>
+</p>
+<p>
+  <strong>Комментарий:</strong><br/>
+  <%= comment.body %>
+</p>
+<p>
+  <%= link_to 'Уничтожить комментарий', [comment.wagon, comment],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>

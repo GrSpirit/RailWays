@@ -11,16 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423143002) do
+ActiveRecord::Schema.define(version: 20150424075937) do
 
-  create_table "wagons", force: :cascade do |t|
-    t.string   "label",       null: false
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.date     "repared_at"
-    t.datetime "updated_at",  null: false
+  create_table "comments", force: :cascade do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "wagon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  add_index "comments", ["wagon_id"], name: "index_comments_on_wagon_id"
+
+  create_table "wagons", force: :cascade do |t|
+    t.string   "label",           null: false
+    t.text     "description"
+    t.date     "manufactured_at"
+    t.date     "repared_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.datetime "deleted_at"
+  end
+
+  add_index "wagons", ["deleted_at"], name: "index_wagons_on_deleted_at"
   add_index "wagons", ["label"], name: "index_wagons_on_label", unique: true
 
 end

@@ -3,7 +3,7 @@ class CreateWagons < ActiveRecord::Migration
     create_table :wagons do |t|
       t.string :label, null: false
       t.text :description
-      t.date :created_at
+      t.date :manufactured_at
       t.date :repared_at
 
       t.timestamps null: false
