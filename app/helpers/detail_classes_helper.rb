@@ -1,0 +1,2 @@
+module DetailClassesHelper
+end

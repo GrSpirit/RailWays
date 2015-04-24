@@ -1,0 +1,21 @@
+<%= form_for(@detail_class) do |f| %>
+  <% if @detail_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detail_class.errors.count, "error") %> prohibited this detail from being saved:</h2>
+
+      <ul>
+      <% @detail_class.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

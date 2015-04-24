@@ -1,0 +1,9 @@
+<%= form_for([@detail_type, @detail_type.detail_models.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

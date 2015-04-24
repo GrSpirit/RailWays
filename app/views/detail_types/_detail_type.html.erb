@@ -1,0 +1,7 @@
+<tr>
+  <td><%= link_to detail_type.name, detail_type %></td>
+  <td><%= link_to 'Изменть', [ :edit, detail_type] %></td>
+  <td><%= link_to 'Удалить', detail_type,
+              method: :delete,
+              data: { confirm: 'Вы уверены?' } %></td>
+</tr>

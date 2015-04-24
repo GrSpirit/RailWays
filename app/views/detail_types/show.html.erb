@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название:</strong>
+  <%= @detail_type.name %>
+</p>
+
+<h2>Модели деталий</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th colspan="2">Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @detail_type.detail_models %>
+  </tbody>
+</table>
+
+<h2>Добавить новый тип</h2>
+<%= render 'detail_models/form' %>
+
+<%= link_to 'Редактировать', [ :edit, @detail_type] %> |
+<%= link_to 'Назад', @detail_type.detail_class %>

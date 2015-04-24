@@ -1,0 +1,14 @@
+<h1>Изменение типа</h1>
+
+<%= form_for(@detail_type) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Показать', @detail_type %> |
+<%= link_to 'Назад', @detail_type.detail_class %>

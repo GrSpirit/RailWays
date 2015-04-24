@@ -1,0 +1,14 @@
+<h1>Изменение модели</h1>
+
+<%= form_for(@detail_model) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Показать', @detail_model %> |
+<%= link_to 'Назад', @detail_model.detail_type %>

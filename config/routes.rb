@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  resources :detail_classes, shallow: true do
+    resources :detail_types do
+      resources :detail_models
+    end
+  end
+  resources :details
+  # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

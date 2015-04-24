@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Details</h1>
+
+<table class="details">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Модель</th>
+      <th>Дата выпуска</th>
+      <th>Дата ремонта</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @details.each do |detail| %>
+      <tr>
+        <td><%= detail.name %></td>
+        <td><%= detail.detail_model.name %></td>
+        <td><%= detail.manufactured_at %></td>
+        <td><%= detail.repared_at %></td>
+        <td><%= link_to 'Show', detail %></td>
+        <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
+        <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detail', new_detail_path %>

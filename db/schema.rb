@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150424075937) do
+ActiveRecord::Schema.define(version: 20150424084810) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
@@ -22,6 +22,41 @@ ActiveRecord::Schema.define(version: 20150424075937) do
   end
 
   add_index "comments", ["wagon_id"], name: "index_comments_on_wagon_id"
+
+  create_table "detail_classes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "detail_models", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "detail_type_id", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "detail_models", ["detail_type_id"], name: "index_detail_models_on_detail_type_id"
+
+  create_table "detail_types", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "detail_class_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "detail_types", ["detail_class_id"], name: "index_detail_types_on_detail_class_id"
+
+  create_table "details", force: :cascade do |t|
+    t.string   "name"
+    t.date     "manufactured_at"
+    t.date     "repared_at"
+    t.integer  "detail_model_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "details", ["detail_model_id"], name: "index_details_on_detail_model_id"
 
   create_table "wagons", force: :cascade do |t|
     t.string   "label",           null: false

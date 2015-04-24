@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @detail_class.name %>
+</p>
+
+<h2>Типы деталий</h2>
+<table>
+  <thead>
+    <tr>
+      <th> Название</th>
+      <th colspan="2">Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @detail_class.detail_types %>
+  </tbody>
+</table>
+
+<h2>Добавить новый тип</h2>
+<%= render 'detail_types/form' %>
+
+
+<%= link_to 'Редактировать', edit_detail_class_path(@detail_class) %> |
+<%= link_to 'Назад', detail_classes_path %>

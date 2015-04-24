@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Классы деталий</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detail_classes.each do |detail_class| %>
+      <tr>
+        <td><%= detail_class.name %></td>
+        <td><%= link_to 'Show', detail_class %></td>
+        <td><%= link_to 'Edit', edit_detail_class_path(detail_class) %></td>
+        <td><%= link_to 'Destroy', detail_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый класс', new_detail_class_path %>

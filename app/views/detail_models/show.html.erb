@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название:</strong>
+  <%= @detail_model.name %>
+</p>
+
+<%= link_to 'Редактировать', [ :edit, @detail_model] %> |
+<%= link_to 'Назад', @detail_model.detail_type %>
