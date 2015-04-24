@@ -1,18 +1,24 @@
 <h1>Список вагонов</h1>
 <table>
-	<thead>
-		<tr>
-			<th>Номер</th>
-			<th>Дата выпуска</th>
-		</tr>
-	</thead>
+  <thead>
+    <tr>
+      <th>Номер</th>
+      <th>Дата выпуска</th>
+    </tr>
+  </thead>
 
-	<tbody>
-		<% @wagons.each do |wagon| %>
-		<tr>
-			<td><%= wagon.label %></td>
-			<td><%= wagon.created_at %></td>
-		</tr>
-		<% end %>
-	</tbody>
+  <tbody>
+    <% @wagons.each do |wagon| %>
+    <tr>
+      <td><%= link_to wagon.label, wagon_path(wagon) %></td>
+      <td><%= wagon.created_at %></td>
+      <td><%= link_to 'Edit', edit_wagon_path(wagon) %></td>
+      <td><%= link_to 'Delete', wagon_path(wagon), 
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
+<%= link_to 'Новый вагон', new_wagon_path %>
