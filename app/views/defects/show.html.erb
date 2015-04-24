@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @defect.description %>
+</p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @defect.detail %>
+</p>
+
+<p>
+  <strong>Wagon:</strong>
+  <%= @defect.wagon %>
+</p>
+
+<p>
+  <strong>Registered at:</strong>
+  <%= @defect.registered_at %>
+</p>
+
+<%= link_to 'Edit', edit_defect_path(@defect) %> |
+<%= link_to 'Back', defects_path %>

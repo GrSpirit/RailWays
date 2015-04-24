@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :defects
   resources :detail_classes, shallow: true do
     resources :detail_types do
       resources :detail_models

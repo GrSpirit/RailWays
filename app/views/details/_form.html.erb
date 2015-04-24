@@ -25,7 +25,8 @@
   </div>
   <div class="field">
     <%= f.label :detail_model_id %><br>
-    <%= f.text_field :detail_model_id %>
+    <!-- f.text_field :detail_model_id -->
+    <%= f.collection_select :detail_model_id, DetailModel.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  detail_id: 
+  wagon_id: 
+  registered_at: 2015-04-24 22:30:05
+
+two:
+  description: MyText
+  detail_id: 
+  wagon_id: 
+  registered_at: 2015-04-24 22:30:05
