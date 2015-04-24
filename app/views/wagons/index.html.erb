@@ -1,0 +1,18 @@
+<h1>Список вагонов</h1>
+<table>
+	<thead>
+		<tr>
+			<th>Номер</th>
+			<th>Дата выпуска</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @wagons.each do |wagon| %>
+		<tr>
+			<td><%= wagon.label %></td>
+			<td><%= wagon.created_at %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
