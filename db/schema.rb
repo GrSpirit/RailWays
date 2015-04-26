@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150424193005) do
   create_table "details", force: :cascade do |t|
     t.string   "name"
     t.date     "manufactured_at"
-    t.date     "repared_at"
+    t.date     "repaired_at"
     t.integer  "detail_model_id", null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20150424193005) do
     t.string   "label",           null: false
     t.text     "description"
     t.date     "manufactured_at"
-    t.date     "repared_at"
+    t.date     "repaired_at"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.datetime "deleted_at"

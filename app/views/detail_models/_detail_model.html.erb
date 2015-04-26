@@ -2,6 +2,7 @@
   <td><%= link_to detail_model.name, detail_model %></td>
   <td><%= link_to 'Изменть', [ :edit, detail_model] %></td>
   <td><%= link_to 'Удалить', detail_model,
-              method: :delete,
-              data: { confirm: 'Вы уверены?' } %></td>
+                  method: :delete, 
+                  remote: true,
+                  data: { confirm: 'Вы уверены?' } %></td>
 </tr>

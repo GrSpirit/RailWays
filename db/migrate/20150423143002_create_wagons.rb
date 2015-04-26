@@ -4,7 +4,7 @@ class CreateWagons < ActiveRecord::Migration
       t.string :label, null: false
       t.text :description
       t.date :manufactured_at
-      t.date :repared_at
+      t.date :repaired_at
 
       t.timestamps null: false
     end

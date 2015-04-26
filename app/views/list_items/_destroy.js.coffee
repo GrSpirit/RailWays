@@ -1,0 +1,1 @@
+$("<%= "##{item.model_name.element}_#{item.id}" %>").remove()

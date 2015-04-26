@@ -1,6 +1,6 @@
 <h1>Изменение класса</h1>
-
-<%= render 'form' %>
+<%= debug(@format) %>
+<%= render partial: 'list_items/form', object: @detail_class, as: 'item' %>
 
 <%= link_to 'Показать', @detail_class %> |
 <%= link_to 'Назад', detail_classes_path %>

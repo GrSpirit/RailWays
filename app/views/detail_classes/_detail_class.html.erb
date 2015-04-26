@@ -1,0 +1,5 @@
+<tr id="detail_class_<%= detail_class.id %>">
+  <td><%= link_to detail_class.name, detail_class %></td>
+  <td><%= link_to 'Изменить', edit_detail_class_path(detail_class), remote: true %></td>
+  <td><%= link_to 'Удалить', detail_class, method: :delete, remote: true, data: { confirm: 'Вы уверены?' } %></td>
+</tr>

@@ -27,6 +27,7 @@ class DetailModelsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @detail_model.detail_type, notice: "Detail type '#{@detail_model.name}' was successfully destroyed." }
       format.json { head :no_content }
+      format.js { render :detail_model }
     end
   end
 

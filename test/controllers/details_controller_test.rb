@@ -18,7 +18,7 @@ class DetailsControllerTest < ActionController::TestCase
 
   test "should create detail" do
     assert_difference('Detail.count') do
-      post :create, detail: { detail_model_id: @detail.detail_model_id, manufactured_at: @detail.manufactured_at, name: @detail.name, repared_at: @detail.repared_at }
+      post :create, detail: { detail_model_id: @detail.detail_model_id, manufactured_at: @detail.manufactured_at, name: @detail.name, repaired_at: @detail.repared_at }
     end
 
     assert_redirected_to detail_path(assigns(:detail))
@@ -35,7 +35,7 @@ class DetailsControllerTest < ActionController::TestCase
   end
 
   test "should update detail" do
-    patch :update, id: @detail, detail: { detail_model_id: @detail.detail_model_id, manufactured_at: @detail.manufactured_at, name: @detail.name, repared_at: @detail.repared_at }
+    patch :update, id: @detail, detail: { detail_model_id: @detail.detail_model_id, manufactured_at: @detail.manufactured_at, name: @detail.name, repaired_at: @detail.repared_at }
     assert_redirected_to detail_path(assigns(:detail))
   end
 

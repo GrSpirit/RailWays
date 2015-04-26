@@ -1,10 +1,10 @@
-<%= form_for(@detail_class) do |f| %>
-  <% if @detail_class.errors.any? %>
+<%= form_for(item, remote: true) do |f| %>
+  <% if item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@detail_class.errors.count, "error") %> prohibited this detail from being saved:</h2>
+      <h2><%= pluralize(item.errors.count, 'error') %> prohibited this detail from being saved:</h2>
 
       <ul>
-      <% @detail_class.errors.full_messages.each do |message| %>
+      <% item.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

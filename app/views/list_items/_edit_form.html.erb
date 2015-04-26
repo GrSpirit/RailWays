@@ -1,0 +1,5 @@
+<%= form_for(item, remote: true) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit 'Сохранить' %>
+    <%= f.button 'Отмена', remote: true %>
+<% end %>

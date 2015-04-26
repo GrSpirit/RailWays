@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Классы деталий</h1>
-<table>
+<table class="classification">
   <thead>
     <tr>
       <th>Название</th>
@@ -9,18 +9,14 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @detail_classes.each do |detail_class| %>
-      <tr>
-        <td><%= detail_class.name %></td>
-        <td><%= link_to 'Show', detail_class %></td>
-        <td><%= link_to 'Edit', edit_detail_class_path(detail_class) %></td>
-        <td><%= link_to 'Destroy', detail_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id="detail_classes">
+    <%= render @detail_classes %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Новый класс', new_detail_class_path %>
+<h2>Новый класс</h2>
+<%= render partial: 'list_items/form', object: @detail_class, as: 'item' %>
+<!--%= link_to 'Новый класс', new_detail_class_path %><br/-->
+<%= link_to 'Главная', root_path %>

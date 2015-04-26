@@ -46,7 +46,7 @@ class WagonsController < ApplicationController
 
 private
   def wagon_params
-    params.require(:wagon).permit(:label, :description, :manufactured_at, :repared_at)
+    params.require(:wagon).permit(:label, :description, :manufactured_at, :repaired_at)
   end
 
 end

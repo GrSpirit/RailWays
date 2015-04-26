@@ -3,5 +3,5 @@ class DetailType < ActiveRecord::Base
   belongs_to :detail_class
   validates :name, presence: true,
             length: { maximum: 100 }
-  validates :detail_class_id, presence: true
+  validates :detail_class, presence: true
 end
