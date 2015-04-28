@@ -1,6 +1,6 @@
-<tr>
+<tr id="<%= "detail_model_#{detail_model.id}" %>">
   <td><%= link_to detail_model.name, detail_model %></td>
-  <td><%= link_to 'Изменть', [ :edit, detail_model] %></td>
+  <td><%= link_to 'Изменть', [ :edit, detail_model], remote: true %></td>
   <td><%= link_to 'Удалить', detail_model,
                   method: :delete, 
                   remote: true,
