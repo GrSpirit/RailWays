@@ -15,7 +15,6 @@ class DetailClassesController < ApplicationController
 
   def edit
     respond_to do |format|
-      @format = format
       format.html
       format.js { render partial: 'list_items/edit', object: @detail_class, as: 'item' }
       format.json { render json: @detail_class }

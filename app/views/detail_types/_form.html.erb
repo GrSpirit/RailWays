@@ -1,4 +1,4 @@
-<%= form_for([@detail_class, @detail_class.detail_types.build]) do |f| %>
+<%= form_for([@detail_class, @detail_class.detail_types.build], remote: true) do |f| %>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

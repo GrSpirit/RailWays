@@ -1,7 +1,8 @@
-<tr>
+<tr id="<%= "detail_type_#{detail_type.id}" %>">
   <td><%= link_to detail_type.name, detail_type %></td>
-  <td><%= link_to 'Изменть', [ :edit, detail_type] %></td>
+  <td><%= link_to 'Изменть', [ :edit, detail_type], remote: true %></td>
   <td><%= link_to 'Удалить', detail_type,
               method: :delete,
-              data: { confirm: 'Вы уверены?' } %></td>
+              data: { confirm: 'Вы уверены?',
+              remote: true} %></td>
 </tr>
